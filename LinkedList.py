@@ -41,6 +41,26 @@ class LinkedList:
         self.head = newNode
         self.head.next = temp
         return
+#REMOVE A NODE FROM LIST
+
+    def removeNode(self, num):
+        # loop through list while having a trailing node
+        temp = self.head  
+        if (temp is not None):  
+            if (temp.data == num):  
+                self.head = temp.next
+                temp = None
+                return
+        while(temp is not None):  
+            if temp.data == num:  
+                break
+            prev = temp  
+            temp = temp.next
+        if(temp == None):  
+            return
+        prev.next = temp.next
+        temp = None
+
 
     def printNodes(self):
         # start at the head
@@ -62,4 +82,7 @@ if __name__ == "__main__":
     a.peek(909)
     a.peek(9)
     a.newHeadNode(101)
+    a.printNodes()
+    a.removeNode(666)
+    print('-------------')
     a.printNodes()
