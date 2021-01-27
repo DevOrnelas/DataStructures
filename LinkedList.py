@@ -32,7 +32,16 @@ class LinkedList:
             temp = temp.next
         print('Number Not Found in List')
         return False
+
+# CRATE A NEW HEAD NODE 
     
+    def newHeadNode(self, num):
+        newNode = Node(num)
+        temp = self.head
+        self.head = newNode
+        self.head.next = temp
+        return
+
     def printNodes(self):
         # start at the head
         temp = self.head
@@ -52,3 +61,5 @@ if __name__ == "__main__":
     a.printNodes()
     a.peek(909)
     a.peek(9)
+    a.newHeadNode(101)
+    a.printNodes()
