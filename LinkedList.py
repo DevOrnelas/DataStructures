@@ -22,6 +22,17 @@ class LinkedList:
             newNode.next = None
             print('end of the chain is now nullified')
     
+    def peek(self, num):
+        # DOES LIST CONTAIN NUMBER?
+        temp = self.head
+        while(temp):
+            if(temp.data == num):
+                print('Number found in List !')
+                return True
+            temp = temp.next
+        print('Number Not Found in List')
+        return False
+    
     def printNodes(self):
         # start at the head
         temp = self.head
@@ -39,3 +50,5 @@ if __name__ == "__main__":
     a.addNode(222)
     a.addNode(255)
     a.printNodes()
+    a.peek(909)
+    a.peek(9)
